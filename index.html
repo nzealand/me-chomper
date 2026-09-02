@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100d2c" />
+  <title>ME-CHOMPER — Eat your greens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Me-Chomper home"><span>ME</span><i>•</i><span>CHOMPER</span></a>
+    <p>FRESH ARCADE PRODUCE</p>
+    <button id="soundBtn" class="icon-btn" type="button" aria-label="Toggle sound">♪</button>
+  </header>
+
+  <main>
+    <section id="intro" class="intro">
+      <div class="hero-copy">
+        <p class="eyebrow">YOU ARE WHAT YOU EAT</p>
+        <h1>PUT YOUR FACE<br><em>IN THE GAME.</em></h1>
+        <p class="dek">Chomp every pea. Dodge the garden spirits.<br>Become a vegetable legend.</p>
+        <div class="steps" aria-label="How to play">
+          <span><b>01</b> SNAP</span><i></i><span><b>02</b> CHOMP</span><i></i><span><b>03</b> SURVIVE</span>
+        </div>
+      </div>
+
+      <div class="camera-card">
+        <div class="tape">LOOK ALIVE!</div>
+        <div id="cameraStage" class="camera-stage">
+          <video id="video" autoplay muted playsinline></video>
+          <canvas id="captureCanvas" hidden></canvas>
+          <div class="face-guide"><span>center your face</span></div>
+          <div id="cameraFallback" class="camera-fallback">
+            <div class="fallback-face">:D</div>
+            <p>CAMERA PREVIEW</p>
+          </div>
+        </div>
+        <button id="cameraBtn" class="primary-btn" type="button">TURN ON CAMERA</button>
+        <button id="playDefaultBtn" class="text-btn" type="button">or play with the house chomper →</button>
+        <p id="cameraStatus" class="status" role="status"></p>
+      </div>
+    </section>
+
+    <section id="gamePanel" class="game-panel" hidden>
+      <div class="scorebar">
+        <div><small>SCORE</small><strong id="score">0000</strong></div>
+        <div class="game-title">ME-CHOMPER <span>•</span> PEA PANIC</div>
+        <div class="lives"><small>LIVES</small><span id="lives"></span></div>
+      </div>
+      <div class="board-wrap">
+        <canvas id="gameCanvas" width="714" height="650" aria-label="Me-Chomper game board"></canvas>
+        <div id="gameOverlay" class="game-overlay" hidden>
+          <p id="overlayKicker">HARVEST COMPLETE</p>
+          <h2 id="overlayTitle">PEA-RFECT!</h2>
+          <p id="overlayScore"></p>
+          <button id="againBtn" class="primary-btn" type="button">PLAY AGAIN</button>
+          <button id="newFaceBtn" class="text-btn light" type="button">take a new photo</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="key-help"><kbd>↑</kbd><div><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></div></div>
+        <p><b>ARROW KEYS / WASD</b><br>Swipe the maze on mobile</p>
+        <button id="pauseBtn" class="pause-btn" type="button">PAUSE</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 ME-CHOMPER</span><span>MADE WITH PEAS &amp; PANIC</span></footer>
+  <script src="game.js"></script>
+</body>
+</html>
